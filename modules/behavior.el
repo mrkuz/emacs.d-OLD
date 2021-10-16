@@ -9,3 +9,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; Ask before exiting emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
+
+;; Tab width
+(setq-default tab-width 4)
+;; Always use spaces
+(setq-default indent-tabs-mode nil)
+;; Set up tab stop list
+(setq tab-stop-list '(0 tab-widht))
