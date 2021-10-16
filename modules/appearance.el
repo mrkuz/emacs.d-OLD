@@ -13,6 +13,14 @@
 (show-paren-mode 1)
 ;; Show line numbers
 (global-display-line-numbers-mode 1)
+;; Show column number in mode line
+(column-number-mode 1)
+
+;; Show date in modeline
+(display-time-mode 1)
+(setq display-time-format "%Y-%m-%d W%V")
+;; But hide system load
+(setq display-time-default-load-average nil)
 
 ;; Show buffer name in frame title
 (setq-default frame-title-format '("Emacs - %b"))
