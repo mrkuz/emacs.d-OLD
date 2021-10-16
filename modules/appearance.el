@@ -17,7 +17,6 @@
 ;; Show line numbers
 (add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
 
-
 ;; Show date in modeline
 (setq display-time-default-load-average nil)
 (setq display-time-format "%Y/%m/%d W%V")
@@ -27,7 +26,8 @@
 (setq-default frame-title-format '("Emacs - %b"))
 ;; Set font
 (set-frame-font "Ubuntu Mono:size=16")
-;; (set-frame-font "DejaVu Sans Mono:size=14")
+;; Add some line spacing
+(setq-default line-spacing 2)
 
 ;; Load theme
 (use-package dracula-theme
