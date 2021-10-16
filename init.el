@@ -1,5 +1,9 @@
+;; Contains some basic functions
+(load-file (expand-file-name "modules/init.el" user-emacs-directory))
+
 ;; Load modules
-(load-file (expand-file-name "modules/straight.el" user-emacs-directory))
+(my/load-module "straight")
+(my/load-module "keymap")
 
 ;; Keep ~/.emacs.d clean by using 'etc' and 'var' subdirectories
 (use-package no-littering
