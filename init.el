@@ -3,6 +3,7 @@
 
 ;; Load modules
 (my/load-module "straight")
+(my/load-module "appearance")
 (my/load-module "keymap")
 
 ;; Keep ~/.emacs.d clean by using 'etc' and 'var' subdirectories
