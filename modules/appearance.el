@@ -9,6 +9,10 @@
 (menu-bar-mode 0)
 ;; Disable scroll bar
 (scroll-bar-mode 0)
+;; Show matching parens
+(show-paren-mode 1)
+;; Show line numbers
+(global-display-line-numbers-mode 1)
 
 ;; Show buffer name in frame title
 (setq-default frame-title-format '("Emacs - %b"))
