@@ -6,6 +6,10 @@
 (my/load-module "appearance")
 (my/load-module "keymap")
 
+(use-package dracula-theme
+  :config
+  (load-theme 'dracula t))
+
 ;; Keep ~/.emacs.d clean by using 'etc' and 'var' subdirectories
 (use-package no-littering
   :init
