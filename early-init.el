@@ -1,3 +1,11 @@
+;; Avoid garbage collection at startup
+(setq gc-cons-threshold most-positive-fixnum
+      gc-cons-percentage 0.6)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold 16777216 ; 16 MiB
+                  gc-cons-percentage 0.1)))
+
 ;; Prevent loading packages prior to their init-file
 (setq package-enable-at-startup nil)
 
