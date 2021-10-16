@@ -9,3 +9,13 @@
 (menu-bar-mode 0)
 ;; Disable scroll bar
 (scroll-bar-mode 0)
+
+;; Show buffer name in frame title
+(setq-default frame-title-format '("Emacs - %b"))
+;; Set font
+(set-frame-font "Ubuntu Mono:size=16")
+
+;; Disable splash screen
+(setq inhibit-splash-screen t)
+;; Empty *scratch* buffer
+(setq initial-scratch-message nil)
