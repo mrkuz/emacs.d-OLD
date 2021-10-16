@@ -18,3 +18,9 @@
   :config
   (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
   (setq custom-file (no-littering-expand-etc-file-name "custom.el")))
+
+;; Show initialization time on startup
+(add-hook 'emacs-startup-hook
+	  (lambda ()
+	    (message "Ready in %s seconds."
+		     (format "%.2f" (float-time (time-subtract after-init-time before-init-time))))))
