@@ -17,10 +17,9 @@
 (column-number-mode 1)
 
 ;; Show date in modeline
-(display-time-mode 1)
-(setq display-time-format "%Y-%m-%d W%V")
-;; But hide system load
 (setq display-time-default-load-average nil)
+(setq display-time-format "%Y-%m-%d W%V")
+(display-time-mode 1)
 
 ;; Show buffer name in frame title
 (setq-default frame-title-format '("Emacs - %b"))
@@ -31,3 +30,14 @@
 (use-package dracula-theme
   :config
   (load-theme 'dracula t))
+
+;; Get rid of minor modes in the modeline
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'abbrev-mode))
+
+;; Powerline
+(use-package telephone-line
+  :config
+  (telephone-line-mode 1))

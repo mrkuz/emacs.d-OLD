@@ -5,6 +5,7 @@
 (setq read-buffer-completion-ignore-case t)
 (setq completion-ignore-case t)
 
+;; Show completions vertically
 (use-package vertico
   :config
   (vertico-mode))

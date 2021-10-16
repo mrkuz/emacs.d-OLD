@@ -5,6 +5,7 @@
 (my/load-module "straight")
 (my/load-module "no-littering")
 (my/load-module "behavior")
+(my/load-module "discover")
 (my/load-module "appearance")
 (my/load-module "completion")
 (my/load-module "keymap")
