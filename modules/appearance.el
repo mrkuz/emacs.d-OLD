@@ -19,3 +19,8 @@
 (setq inhibit-splash-screen t)
 ;; Empty *scratch* buffer
 (setq initial-scratch-message nil)
+
+;; Load theme
+(use-package dracula-theme
+  :config
+  (load-theme 'dracula t))
