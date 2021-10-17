@@ -4,3 +4,4 @@
 
 (define-key my/map (kbd "f c") (lambda () (interactive) (find-file user-init-file)))
 (define-key my/map (kbd "R") (lambda () (interactive) (load-file user-init-file)))
+(define-key my/map (kbd "t t") 'treemacs)

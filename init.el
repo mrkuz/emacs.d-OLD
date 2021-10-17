@@ -8,6 +8,7 @@
 (my/load-module "discover")
 (my/load-module "appearance")
 (my/load-module "tabbar")
+(my/load-module "treemacs")
 (my/load-module "completion")
 (my/load-module "calendar")
 (my/load-module "keymap")
