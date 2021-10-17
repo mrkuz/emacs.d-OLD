@@ -24,8 +24,9 @@
 
 ;; Show buffer name in frame title
 (setq-default frame-title-format '("Emacs - %b"))
-;; Set font
+;; Set fonts
 (set-frame-font "Ubuntu Mono:size=16")
+(set-face-attribute 'variable-pitch nil :family "Ubuntu")
 ;; Add some line spacing
 (setq-default line-spacing 2)
 
