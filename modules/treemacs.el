@@ -1,4 +1,6 @@
 (use-package treemacs
+  :defer
+  :commands (treemacs)
   :bind (:map treemacs-mode-map ([mouse-1] . 'treemacs-single-click-expand-action))
   :config
   (setq treemacs-width 30
