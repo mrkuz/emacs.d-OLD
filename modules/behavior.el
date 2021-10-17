@@ -3,6 +3,9 @@
 ;; Empty *scratch* buffer
 (setq initial-scratch-message nil)
 
+;; Disable bell
+(setq ring-bell-function 'ignore)
+
 ;; Set fill column
 (setq-default fill-column 100)
 ;; Always ask for y/n instead of yes/no
