@@ -11,6 +11,7 @@
 (my/load-module "treemacs")
 (my/load-module "completion")
 (my/load-module "calendar")
+(my/load-module "workspaces")
 (my/load-module "keymap")
 
 ;; Show number of packages and initialization time on startup

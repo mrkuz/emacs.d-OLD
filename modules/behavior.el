@@ -2,6 +2,8 @@
 (setq inhibit-splash-screen t)
 ;; Empty *scratch* buffer
 (setq initial-scratch-message nil)
+;; Use org-mode for scratch buffers
+(setq initial-major-mode 'org-mode)
 
 ;; Disable bell
 (setq ring-bell-function 'ignore)
