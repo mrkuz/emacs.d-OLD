@@ -12,8 +12,9 @@
 (my/load-module "calendar")
 (my/load-module "keymap")
 
-;; Show initialization time on startup
+;; Show number of packages and initialization time on startup
 (add-hook 'emacs-startup-hook
           (lambda ()
-            (message "Ready in %s seconds."
-                     (format "%.2f" (float-time (time-subtract after-init-time before-init-time))))))
+            (message "%d packages loaded in %s seconds."
+                     (hash-table-count straight--profile-cache)
+                     (emacs-init-time "%.2f"))))
