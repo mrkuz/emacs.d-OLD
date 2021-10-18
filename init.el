@@ -1,18 +1,17 @@
-;; Contains some basic functions
-(load-file (expand-file-name "modules/init.el" user-emacs-directory))
+(load-file (expand-file-name "modules/my.el" user-emacs-directory))
 
-;; Load modules
+;; Load configs and modules
 (my/load-module "straight")
 (my/load-module "no-littering")
-(my/load-module "behavior")
-(my/load-module "discover")
-(my/load-module "appearance")
-(my/load-module "tabbar")
+(my/load-config "keymap")
+(my/load-config "behavior")
+(my/load-config "mail")
+(my/load-config "appearance")
+(my/load-module "vertico")
+(my/load-module "centaur-tabs")
 (my/load-module "treemacs")
-(my/load-module "completion")
-(my/load-module "calendar")
-(my/load-module "workspaces")
-(my/load-module "keymap")
+(my/load-module "which-key")
+(my/load-module "eyebrowse")
 
 ;; Show number of packages and initialization time on startup
 (add-hook 'emacs-startup-hook

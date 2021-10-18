@@ -1,0 +1,56 @@
+;;--------------------------------------------------------------------------------------------------
+;; Start-up
+;;--------------------------------------------------------------------------------------------------
+
+;; Don't load default init
+(setq inhibit-default-init t)
+;; Disable splash screen
+(setq inhibit-splash-screen t)
+;; Empty *scratch* buffer
+(setq initial-scratch-message nil)
+;; Use org-mode for scratch buffers
+(setq initial-major-mode 'org-mode)
+
+;;--------------------------------------------------------------------------------------------------
+;; Indention
+;;--------------------------------------------------------------------------------------------------
+
+;; Tab width
+(setq-default tab-width 4)
+;; Always use spaces
+(setq-default indent-tabs-mode nil)
+;; Set up tab stop list
+(setq tab-stop-list '(0 tab-width))
+
+;;--------------------------------------------------------------------------------------------------
+;; Calendar
+;;--------------------------------------------------------------------------------------------------
+
+;; Configure calendar holidays
+(setq calendar-holidays (append holiday-general-holidays holiday-christian-holidays))
+;; Start week with monday
+(setq calendar-week-start-day 1)
+;; Use ISO date format
+(setq calendar-date-style 'iso)
+
+;;--------------------------------------------------------------------------------------------------
+;; Miscellaneous
+;;--------------------------------------------------------------------------------------------------
+
+;; Disable bell
+(setq ring-bell-function 'ignore)
+;; Set fill column
+(setq-default fill-column 100)
+;; Always ask for y/n instead of yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
+;; Ask before exiting emacs
+(setq confirm-kill-emacs 'yes-or-no-p)
+;; Enable all disabled commands
+(setq disabled-command-hook nil)
+;; Always follow links
+(setq vc-follow-symlinks t)
+
+;; Ignore case on completion
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)

@@ -1,8 +1,3 @@
-;; Ignore case on completion
-(setq read-file-name-completion-ignore-case t
-      read-buffer-completion-ignore-case t
-      completion-ignore-case t)
-
 ;; Show completions vertically
 (use-package vertico
   :config
@@ -10,7 +5,7 @@
 
 ;; Use orderless completion style
 (use-package orderless
-  :config
+  :init
   (setq orderless-matching-styles '(orderless-literal orderless-regexp orderless-flex)
         completion-styles '(orderless)))
 
