@@ -13,6 +13,7 @@
 (my/load-module "treemacs")
 (my/load-module "which-key")
 (my/load-module "eyebrowse")
+(my/load-module "undo-tree")
 
 ;; Show number of packages and initialization time on startup
 (add-hook 'emacs-startup-hook
