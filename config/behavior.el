@@ -34,6 +34,17 @@
 (setq calendar-date-style 'iso)
 
 ;;--------------------------------------------------------------------------------------------------
+;; Completion
+;;--------------------------------------------------------------------------------------------------
+
+;; Add fuzzy completion
+(setq completion-styles '(basic partial-completion flex))
+;; Ignore case on completion
+;; (setq read-file-name-completion-ignore-case t
+;;      read-buffer-completion-ignore-case t
+;;      completion-ignore-case t)
+
+;;--------------------------------------------------------------------------------------------------
 ;; Backups
 ;;--------------------------------------------------------------------------------------------------
 
@@ -62,8 +73,3 @@
 (setq disabled-command-hook nil)
 ;; Always follow links
 (setq vc-follow-symlinks t)
-
-;; Ignore case on completion
-(setq read-file-name-completion-ignore-case t
-      read-buffer-completion-ignore-case t
-      completion-ignore-case t)

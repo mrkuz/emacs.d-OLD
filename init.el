@@ -8,6 +8,7 @@
 (my/load-config "mail")
 (my/load-config "appearance")
 (my/load-module "vertico")
+(my/load-module "company")
 (my/load-module "centaur-tabs")
 (my/load-module "treemacs")
 (my/load-module "which-key")
