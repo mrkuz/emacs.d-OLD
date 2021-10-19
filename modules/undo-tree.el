@@ -7,7 +7,6 @@
   (setq undo-tree-visualizer-diff nil ; Show diff with 'd'
         undo-tree-visualizer-timestamps nil ; Show timestamps with 't'
         undo-tree-visualizer-relative-timestamps nil)
-  ;; my/map
-  (define-key my/map (kbd "u") 'undo-tree-visualize)
+  :bind (:map my/map ("u" . 'undo-tree-visualize))
   :hook ((text-mode . undo-tree-mode)
          (prog-mode . undo-tree-mode)))

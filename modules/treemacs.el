@@ -1,12 +1,12 @@
 (use-package treemacs
-  :defer
+  :defer t
   :commands (treemacs)
-  :bind (:map treemacs-mode-map ([mouse-1] . 'treemacs-single-click-expand-action))
+  :bind (
+         :map treemacs-mode-map ([mouse-1] . 'treemacs-single-click-expand-action)
+         :map my/map ("t t" . 'treemacs))
   :init
   (setq treemacs-width 30
         treemacs-collapse-dirs 10)
-  ;; my/map
-  (define-key my/map (kbd "t t") 'treemacs)
   :config
   (set-face-attribute 'treemacs-directory-face nil :family "Ubuntu" :height 100 :weight 'normal)
   (set-face-attribute 'treemacs-directory-collapsed-face nil :family "Ubuntu" :height 100 :weight 'normal)
