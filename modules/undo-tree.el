@@ -1,5 +1,6 @@
 ;; Show undo history as tree structure
 (use-package undo-tree
+  :defer t
   :diminish undo-tree-mode
   :init
   ;; Inhibit keymap setup
