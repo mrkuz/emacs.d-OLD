@@ -15,6 +15,7 @@
 (my/load-module "which-key")
 (my/load-module "eyebrowse")
 (my/load-module "undo-tree")
+(my/load-module "org-mode")
 (my/load-module "org-roam")
 
 ;; Show number of packages and initialization time on startup
