@@ -1,5 +1,7 @@
 (use-package eyebrowse
   :init
+  ;; Inhibit keymap setup
+  (setq eyebrowse-mode-map (make-sparse-keymap))
   (setq eyebrowse-mode-line-left-delimiter ""
         eyebrowse-mode-line-right-delimiter ""
         eyebrowse-mode-line-separator " "
