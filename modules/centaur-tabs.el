@@ -9,4 +9,6 @@
   :config
   (set-face-attribute 'centaur-tabs-selected nil :family "Ubuntu" :height 100)
   (set-face-attribute 'centaur-tabs-unselected nil :family "Ubuntu" :height 100)
+  (set-face-attribute 'centaur-tabs-selected-modified nil :family "Ubuntu" :height 100)
+  (set-face-attribute 'centaur-tabs-unselected-modified nil :family "Ubuntu" :height 100)
   (centaur-tabs-mode t))
