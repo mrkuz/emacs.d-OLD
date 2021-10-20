@@ -12,7 +12,7 @@
         ;; Insert log notes into LOGBOOK
         org-log-into-drawer t
         ;; Add CLOSED timestamp to DONE items
-        org-log-done 'time
+        ;; org-log-done 'time
         ;; Add tags immediate after the headline
         org-tags-column 0)
   ;; TODO keywords
@@ -23,12 +23,24 @@
         org-archive-file-header-format nil)
   ;; Allow setting refile targets as local file variable
   (put 'org-refile-targets 'safe-local-variable (lambda (_) t))
+  ;; Capture templates
+  (setq org-capture-templates '(
+                                ("b" "Backlog" entry (file+olp "todo.org" "Backlog")
+                                 "* %:link%?\nCREATED: %U\n%i" :prepend t)
+                                ))
+
   :config
   (set-face-attribute 'org-level-1 nil :height 1.0 :weight 'normal)
   (set-face-attribute 'org-level-2 nil :height 1.0 :weight 'normal)
   (set-face-attribute 'org-level-3 nil :height 1.0 :weight 'normal)
   (set-face-attribute 'org-todo nil :weight 'bold)
   (set-face-attribute 'org-done nil :weight 'bold)
-  :bind (:map my/map
-              ("f t" . (lambda () (interactive) (find-file (concat org-directory "/todo.org")))))
+  :bind (("C-c l" . 'org-store-link)
+         ("C-c a" . 'org-agenda)
+         ("C-c c" . 'org-capture)
+         :map my/map
+              ("o l" . 'org-store-link)
+              ("o a" . 'org-agenda)
+              ("o c" . 'org-capture)
+              ("o t" . (lambda () (interactive) (find-file (concat org-directory "/todo.org")))))
   :hook (org-mode . org-indent-mode))
