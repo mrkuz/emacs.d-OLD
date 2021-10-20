@@ -79,5 +79,6 @@
 (setq confirm-kill-emacs 'yes-or-no-p)
 ;; Enable all disabled commands
 (setq disabled-command-hook nil)
+(setq disabled-command-function nil)
 ;; Always follow links
 (setq vc-follow-symlinks t)
