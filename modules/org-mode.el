@@ -1,3 +1,8 @@
+(defun my/find-todo ()
+  "Open configuration file."
+  (interactive)
+  (find-file (concat org-directory "/todo.org")))
+
 (use-package org
   :defer t
   :init
@@ -42,5 +47,5 @@
               ("o l" . 'org-store-link)
               ("o a" . 'org-agenda)
               ("o c" . 'org-capture)
-              ("o t" . (lambda () (interactive) (find-file (concat org-directory "/todo.org")))))
+              ("o t" . 'my/find-todo))
   :hook (org-mode . org-indent-mode))
