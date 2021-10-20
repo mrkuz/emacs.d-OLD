@@ -11,7 +11,12 @@
         centaur-tabs-set-close-button nil
 	    centaur-tabs-set-bar 'over)
   :config
-  (defun centaur-tabs-buffer-groups () '("All"))
+  (defun centaur-tabs-buffer-groups ()
+    (list
+      (cond
+	   ((string-prefix-p "*scratch" (buffer-name)) "Default")
+       ((string-prefix-p "*" (buffer-name)) "Emacs")
+	   (t "Default"))))
   (advice-add 'org-switch-to-buffer-other-window :after 'my/org-select-no-tabs)
   (set-face-attribute 'centaur-tabs-selected nil :family "Ubuntu" :height 100)
   (set-face-attribute 'centaur-tabs-unselected nil :family "Ubuntu" :height 100)
