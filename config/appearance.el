@@ -13,8 +13,6 @@
 
 (set-frame-font "Ubuntu Mono:size=16")
 (set-face-attribute 'variable-pitch nil :family "Ubuntu")
-(set-face-attribute 'line-number nil :slant 'normal)
-(set-face-attribute 'line-number-current-line nil :slant 'normal)
 
 ;;--------------------------------------------------------------------------------------------------
 ;; Theme
@@ -22,7 +20,9 @@
 
 (use-package dracula-theme
   :config
-  (load-theme 'dracula t))
+  (load-theme 'dracula t)
+  (set-face-attribute 'line-number nil :slant 'normal)
+  (set-face-attribute 'line-number-current-line nil :slant 'normal))
 
 ;;--------------------------------------------------------------------------------------------------
 ;; Modeline
