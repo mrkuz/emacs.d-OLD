@@ -1,9 +1,19 @@
+(defun my/toggle-treemacs ()
+  "Toggle treemacs."
+  (interactive)
+  (pcase (treemacs-current-visibility)
+    ('visible (delete-window (treemacs-get-local-window)))
+    ('exists (treemacs-select-window))
+    ('none (treemacs-display-current-project-exclusively))))
+
 (use-package treemacs
   :defer t
   :commands (treemacs)
   :bind (
          :map treemacs-mode-map ([mouse-1] . 'treemacs-single-click-expand-action)
-         :map my/map ("t t" . 'treemacs))
+              :map my/map
+              ("t t" . 'my/toggle-treemacs)
+              ("t p" . 'treemacs-display-current-project-exclusively))
   :init
   (setq treemacs-width 30
         treemacs-collapse-dirs 10)

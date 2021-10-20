@@ -53,6 +53,17 @@
 ;;      completion-ignore-case t)
 
 ;;--------------------------------------------------------------------------------------------------
+;; Projects
+;;--------------------------------------------------------------------------------------------------
+
+;; '.project' marks directory as root of project
+(defun my/find-project-root (dir)
+  (let ((root (locate-dominating-file dir ".project")))
+    (if root (cons 'transient root) nil)))
+
+(add-to-list 'project-find-functions 'my/find-project-root)
+
+;;--------------------------------------------------------------------------------------------------
 ;; Backups
 ;;--------------------------------------------------------------------------------------------------
 
