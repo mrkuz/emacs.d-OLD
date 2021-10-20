@@ -61,7 +61,10 @@
   (let ((root (locate-dominating-file dir ".project")))
     (if root (cons 'transient root) nil)))
 
-(add-to-list 'project-find-functions 'my/find-project-root)
+(use-package project
+  :straight (:type built-in)
+  :config
+  (add-to-list 'project-find-functions 'my/find-project-root))
 
 ;;--------------------------------------------------------------------------------------------------
 ;; Backups
