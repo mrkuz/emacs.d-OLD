@@ -1,3 +1,8 @@
+(defun my/org-select-no-tabs (name &rest args)
+  (when (stringp name)
+    (when (string= name "*Org Select*")
+      (centaur-tabs-local-mode))))
+
 (use-package centaur-tabs
   :init
   (setq centaur-tabs-style "bar"
@@ -7,6 +12,7 @@
 	    centaur-tabs-set-bar 'over)
   :config
   (defun centaur-tabs-buffer-groups () '("All"))
+  (advice-add 'org-switch-to-buffer-other-window :after 'my/org-select-no-tabs)
   (set-face-attribute 'centaur-tabs-selected nil :family "Ubuntu" :height 100)
   (set-face-attribute 'centaur-tabs-unselected nil :family "Ubuntu" :height 100)
   (set-face-attribute 'centaur-tabs-selected-modified nil :family "Ubuntu" :height 100)
