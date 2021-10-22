@@ -24,7 +24,7 @@
   ;; Include diary in agenda
   (setq org-agenda-include-diary t
         ;; Set up agenda files
-        org-agenda-files (directory-files-recursively org-directory "\.org$"))
+        org-agenda-files '("~/org/todo.org" "~/org/projects/" "~/org/calendar/" "~/org/mobile/"))
   ;; Open files folded
   (setq org-startup-folded t
         ;; Insert log notes into LOGBOOK

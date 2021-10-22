@@ -17,9 +17,7 @@
 (my/load-module "undo-tree")
 (my/load-module "org-mode")
 (my/load-module "org-roam")
-
-(require 'server)
-(unless (server-running-p) (server-start))
+(my/load-module "org-ql")
 
 ;; Show number of packages and initialization time on startup
 (add-hook 'emacs-startup-hook
