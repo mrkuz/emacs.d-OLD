@@ -18,6 +18,9 @@
 (my/load-module "org-mode")
 (my/load-module "org-roam")
 
+(require 'server)
+(unless (server-running-p) (server-start))
+
 ;; Show number of packages and initialization time on startup
 (add-hook 'emacs-startup-hook
           (lambda ()

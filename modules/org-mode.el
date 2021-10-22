@@ -1,11 +1,24 @@
-(defun my/find-todo ()
+(defun my/org-find-todo ()
   "Open configuration file."
   (interactive)
   (find-file (concat org-directory "/todo.org")))
 
+(defun my/org-protocol-capture-hook ()
+  (let ((name (cdr (assoc 'name (frame-parameters)))))
+    (when (equal name "org-protocol-capture")
+      (delete-other-windows)
+      (modify-frame-parameters nil '((z-group . above)))
+      (select-frame-set-input-focus (selected-frame)))))
+
+(defun my/org-protocol-after-capture-hook ()
+  (let ((name (cdr (assoc 'name (frame-parameters)))))
+    (when (equal name "org-protocol-capture")
+      (delete-frame))))
+
 (use-package org
   :defer t
   :init
+  (require 'org-protocol)
   ;; Set org directory
   (setq org-directory "~/org")
   ;; Include diary in agenda
@@ -21,17 +34,25 @@
         ;; Add tags immediate after the headline
         org-tags-column 0)
   ;; TODO keywords
-  (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c!)" "PAUSED(p!)")))
+  (setq org-todo-keywords '(
+                            (sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c!)" "PAUSED(p!)")
+                            (sequence "EVENT(e)" "|" "DONE(d!)" "CANCELED(c!)")))
   ;; Set archive file
-  (setq org-archive-location "~/org/AAA.org::* File: %s"
+  (setq org-archive-location "~/org/.archive.org::* File: %s"
         ;; Don't add header to archive file
         org-archive-file-header-format nil)
   ;; Allow setting refile targets as local file variable
   (put 'org-refile-targets 'safe-local-variable (lambda (_) t))
   ;; Capture templates
   (setq org-capture-templates '(
-                                ("b" "Backlog" entry (file+olp "todo.org" "Backlog")
-                                 "* %:link%?\nCREATED: %U\n%i" :prepend t)
+                                ("b" "New backlog entry" entry (file+olp "todo.org" "Backlog")
+                                 "* %?\nCREATED: %U" :prepend t)
+                                ("j" "Add journal entry" entry (file "journal.org")
+                                 "* %U %?" :prepend t)
+                                ("w" "Capture web page" entry (file "gists.org")
+                                 "* %?\nCREATED: %U\nTITLE: %:description%\nURL: %:link\n\n%i" :prepend t)
+                                ("p" "Capture primary selection" entry (file "gists.org")
+                                 "* %?\nCREATED: %U\n\n%(gui-get-primary-selection)" :prepend t)
                                 ))
 
   :config
@@ -47,5 +68,8 @@
               ("o l" . 'org-store-link)
               ("o a" . 'org-agenda)
               ("o c" . 'org-capture)
-              ("o t" . 'my/find-todo))
-  :hook (org-mode . org-indent-mode))
+              ("o t" . 'my/org-find-todo))
+  :hook (
+         (org-mode . org-indent-mode)
+         (org-capture-mode . my/org-protocol-capture-hook)
+         (org-capture-after-finalize . my/org-protocol-after-capture-hook)))
