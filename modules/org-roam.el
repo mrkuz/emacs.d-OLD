@@ -14,8 +14,8 @@
                (window-width . 0.30)
                (window-height . fit-window-to-buffer)))
   :bind (:map my/map
-              ("o n" . 'org-roam-node-find)
-              ("o j" . 'org-roam-dailies-goto-today))
+              ;; ("o j" . 'org-roam-dailies-goto-today)
+              ("o n" . 'org-roam-node-find))
   :config
-  (require 'org-roam-dailies)
+  ;; (require 'org-roam-dailies)
   (org-roam-db-autosync-mode))

@@ -40,9 +40,9 @@
 (display-time-mode 1)
 
 ;; Powerline
-(use-package telephone-line
-  :config
-  (telephone-line-mode 1))
+;; (use-package telephone-line
+;;   :config
+;;   (telephone-line-mode 1))
 
 ;;--------------------------------------------------------------------------------------------------
 ;; Miscellaneous

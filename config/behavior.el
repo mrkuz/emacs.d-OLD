@@ -75,6 +75,10 @@
   :straight (:type built-in)
   :bind (:map dired-mode-map ([remap dired-find-file] . 'dired-find-alternate-file)))
 
+;;--------------------------------------------------------------------------------------------------
+;; recentf
+;;--------------------------------------------------------------------------------------------------
+
 (use-package recentf
   :bind (:map my/map ("f r" . 'recentf-open-files))
   :config
