@@ -12,6 +12,8 @@
 ;;--------------------------------------------------------------------------------------------------
 
 (set-frame-font "Ubuntu Mono:size=16")
+;; (set-face-attribute 'default nil :family "Ubuntu Mono")
+(set-face-attribute 'fixed-pitch nil :family "Ubuntu Mono")
 (set-face-attribute 'variable-pitch nil :family "Ubuntu")
 
 ;;--------------------------------------------------------------------------------------------------
@@ -57,6 +59,8 @@
 
 ;; Disable blinking cursor
 (blink-cursor-mode 0)
+;; Set cursor to bar
+;; (setq-default cursor-type 'bar)
 
 ;; No dialog boxes
 (setq use-dialog-box nil)
@@ -65,7 +69,7 @@
 (setq-default line-spacing 2)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 ;; Show matching parens
 (show-paren-mode 1)
 ;; Show column number in mode line
