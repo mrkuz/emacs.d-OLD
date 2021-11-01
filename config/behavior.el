@@ -114,3 +114,5 @@
 (setq disabled-command-function nil)
 ;; Always follow links
 (setq vc-follow-symlinks t)
+;; Persist minibuffer history
+(savehist-mode)
