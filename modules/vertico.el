@@ -7,7 +7,8 @@
 (use-package orderless
   :init
   (setq orderless-matching-styles '(orderless-literal orderless-regexp orderless-flex))
-  (add-to-list 'completion-styles 'orderless))
+  ;; Override completion styles
+  (setq completion-styles '(orderless)))
 
 ;; Show extra information (like description, file permission, ...) next to minibuffer completions
 (use-package marginalia

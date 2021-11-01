@@ -1,4 +1,7 @@
 (setq straight-use-package-by-default t)
+(setq straight-vc-git-default-clone-depth 1)
+;; Don't check for package modifications automatically
+(setq straight-check-for-modifications nil)
 
 ;; Bootstrap straight
 (defvar bootstrap-version)
