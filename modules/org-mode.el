@@ -15,6 +15,12 @@
     (when (equal name "org-protocol-capture")
       (delete-frame))))
 
+(use-package org-bullets
+  :after org
+  :init
+  (setq org-bullets-bullet-list '("◉" "○" "●" "◦" "•"))
+  :hook (org-mode . org-bullets-mode))
+
 (use-package org
   :defer t
   :init
@@ -32,7 +38,11 @@
         ;; Add CLOSED timestamp to DONE items
         ;; org-log-done 'time
         ;; Add tags immediate after the headline
-        org-tags-column 0)
+        org-tags-column 0
+        ;; Reduce indentation
+        org-indent-indentation-per-level 1)
+  ;; Hide marker characters
+  (setq org-hide-emphasis-markers t)
   ;; TODO keywords
   (setq org-todo-keywords '(
                             (sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c!)" "PAUSED(p!)")
