@@ -11,8 +11,8 @@
 ;; Fonts
 ;;--------------------------------------------------------------------------------------------------
 
-(set-frame-font "Ubuntu Mono:size=16")
-;; (set-face-attribute 'default nil :family "Ubuntu Mono")
+(set-frame-font "Ubuntu Mono")
+(set-face-attribute 'default nil :family "Ubuntu Mono" :height 120)
 (set-face-attribute 'fixed-pitch nil :family "Ubuntu Mono")
 (set-face-attribute 'variable-pitch nil :family "Ubuntu")
 
