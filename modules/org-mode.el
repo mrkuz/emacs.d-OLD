@@ -51,6 +51,8 @@
   (setq org-archive-location "~/org/.archive.org::* File: %s"
         ;; Don't add header to archive file
         org-archive-file-header-format nil)
+  ;; Never add blank lines before new entries
+  (setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
   ;; Allow setting refile targets as local file variable
   (put 'org-refile-targets 'safe-local-variable (lambda (_) t))
   ;; Capture templates
