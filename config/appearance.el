@@ -76,3 +76,8 @@
 (column-number-mode 1)
 ;; Show line numbers
 (add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
+
+;; Consider fill-column in visual line mode
+(use-package visual-fill-column
+  :defer t
+  :hook (visual-line-mode . visual-fill-column-mode))
