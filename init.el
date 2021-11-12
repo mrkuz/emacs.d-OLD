@@ -15,7 +15,7 @@
 (my/load-module "which-key")
 ;; (my/load-module "eyebrowse")
 ;; (my/load-module "undo-tree")
-(my/load-module "flyspell-correct")
+(my/load-module "flyspell")
 (my/load-module "org-mode")
 (my/load-module "org-roam")
 (my/load-module "org-ql")
