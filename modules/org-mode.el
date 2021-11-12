@@ -23,6 +23,7 @@
 
 (use-package org
   :defer t
+  :diminish org-indent-mode
   :init
   (require 'org-protocol)
   ;; Set org directory
