@@ -22,6 +22,7 @@
   :hook (org-mode . org-bullets-mode))
 
 (use-package org
+  :straight (:type built-in)
   :defer t
   :diminish org-indent-mode
   :init
